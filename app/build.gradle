@@ -35,7 +35,7 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
 
-    compile "com.github.qiyulan:Android-Base-Utils:V1.4.1"
+    compile "com.github.Qixingchen:Android-Base-Utils:V1.0.0"
 
     //RxJava
     compile 'io.reactivex:rxandroid:1.2.1'
