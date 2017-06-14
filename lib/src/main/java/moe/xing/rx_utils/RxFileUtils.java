@@ -175,7 +175,7 @@ public class RxFileUtils extends FileUtils {
                     try {
                         is = context.getContentResolver().openInputStream(uri);
 
-                        file = FileUtils.getCacheFile(FileUtils.getFileNameFromUrl(uri.toString()));
+                        file = FileUtils.getCacheFile(FileUtils.getFileNameFromUri(uri));
 
                         os = new FileOutputStream(file);
                         byte[] buf = new byte[1024 * 8];
