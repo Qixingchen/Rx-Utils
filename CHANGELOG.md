@@ -1,3 +1,9 @@
+## V1.2.6-LTE
+1.2.6 Long Time Event
+
+add support for enter in hard keyboard
+ViewEvent delay set to 1500 ms
+
 ## V1.2.5
 
 add sample

@@ -2,6 +2,7 @@ package moe.xing.rx_utils;
 
 import android.support.annotation.NonNull;
 import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -46,7 +47,8 @@ public class RxEditText {
             TextView.OnEditorActionListener listener = new TextView.OnEditorActionListener() {
                 @Override
                 public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                    if (actionId == KeyEvent.KEYCODE_ENTER || actionId == KeyEvent.KEYCODE_ENDCALL) {
+                    if (actionId == KeyEvent.KEYCODE_ENTER || actionId == KeyEvent.KEYCODE_ENDCALL
+                            || actionId == EditorInfo.IME_NULL) {
                         if (!subscriber.isUnsubscribed()) {
                             subscriber.onNext(null);
                         }
