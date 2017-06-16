@@ -1,3 +1,6 @@
+## V1.2.6
+add support for enter in hard keyboard
+
 ## V1.2.6-LTE
 1.2.6 Long Time Event
 

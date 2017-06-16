@@ -23,7 +23,7 @@ public class RxViewEvent {
         return new Observable.Transformer<Void, Void>() {
             @Override
             public Observable<Void> call(Observable<Void> responseObservable) {
-                return responseObservable.throttleLast(1500, TimeUnit.MILLISECONDS)
+                return responseObservable.throttleLast(500, TimeUnit.MILLISECONDS)
                         .observeOn(AndroidSchedulers.mainThread());
             }
         };
