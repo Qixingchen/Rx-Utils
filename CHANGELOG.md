@@ -1,3 +1,6 @@
+## V1.2.7
+update dependencies for rx1
+
 ## V1.2.6
 add support for enter in hard keyboard
 
