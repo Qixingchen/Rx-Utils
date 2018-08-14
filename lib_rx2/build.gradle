@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.sdk_version
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion rootProject.ext.sdk_version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            testCoverageEnabled true
+        }
+        lintOptions {
+            abortOnError false
+        }
+    }
+    configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                // Force all of the primary support libraries to use the same version.
+                if (details.requested.group == 'com.android.support' && details.requested.name != 'multidex') {
+                    details.useVersion supportLibraryVersion
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+    //RxJava2
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'io.reactivex.rxjava2:rxjava:2.2.0'
+    //rxpermissions
+    api 'com.github.tbruyelle:rxpermissions:0.10.2'
+    //RxBinding
+    api 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1'
+    api 'com.jakewharton.rxbinding2:rxbinding-support-v4-kotlin:2.1.1'
+    api 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:2.1.1'
+    api 'com.jakewharton.rxbinding2:rxbinding-design-kotlin:2.1.1'
+    api 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7-kotlin:2.1.1'
+    api "com.github.Qixingchen:Android-Base-Utils:V1.1.2"
+    api 'commons-io:commons-io:2.6'
+}

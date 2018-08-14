@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "moe.xing.rx_utils_sample"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion rootProject.ext.sdk_version
         versionCode 1
         versionName "1.0"
@@ -31,15 +31,20 @@ android {
             }
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':lib')
+    implementation project(':lib_rx2')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
+    implementation "com.github.akarnokd:rxjava2-interop:0.13.0"
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     testImplementation 'junit:junit:4.12'
 }
