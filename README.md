@@ -11,7 +11,7 @@ Rx-Utils
  
  support rx and rx2
  
-Rxjava  
+RxJava  
 ```
 implementation 'app.scjwb.Rx-Utils:lib:{last_version}'
 ```
@@ -24,7 +24,7 @@ implementation 'app.scjwb.Rx-Utils:lib_rx2:{last_version}'
 ### how to use
 please call Init at application.
 
-Rxjava:
+RxJava:
 read javadoc in [jitpack](https://jitpack.io/app/scjwb/Rx-Utils/lib/-SNAPSHOT/javadoc/)
 
 RxJava2:
