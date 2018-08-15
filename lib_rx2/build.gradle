@@ -62,6 +62,11 @@ dependencies {
     api 'commons-io:commons-io:2.6'
 }
 
+// build a jar with source files
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
 
 task javadoc(type: Javadoc) {
     failOnError false
