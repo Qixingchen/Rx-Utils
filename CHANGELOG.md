@@ -1,3 +1,6 @@
+## V2.0.0
+support RxJava2
+
 ## V1.2.7
 update dependencies for rx1
 
