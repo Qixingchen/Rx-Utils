@@ -8,7 +8,7 @@ android {
     compileSdkVersion rootProject.ext.sdk_version
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion rootProject.ext.sdk_version
         versionCode 1
         versionName "1.0"
