@@ -61,6 +61,19 @@ dependencies {
     api "com.github.Qixingchen:Android-Base-Utils:V1.1.2"
     api 'commons-io:commons-io:2.6'
 }
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.qixingchen'
+                artifactId = 'Rx-Utils'
+                version = '2.1'
+            }
+        }
+    }
+}
 //
 //// build a jar with source files
 //task sourcesJar(type: Jar) {

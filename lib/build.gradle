@@ -59,6 +59,21 @@ dependencies {
     api "com.jakewharton.rxbinding:rxbinding-design:$rx_binding_version"
     api "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:$rx_binding_version"
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.qixingchen'
+                artifactId = 'Rx-Utils'
+                version = '2.1'
+            }
+        }
+    }
+}
+
 //// build a jar with source files
 //task sourcesJar(type: Jar) {
 //    from android.sourceSets.main.java.srcDirs
