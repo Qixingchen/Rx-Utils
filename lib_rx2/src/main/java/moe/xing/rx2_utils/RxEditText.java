@@ -55,8 +55,12 @@ public class RxEditText {
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
             if (!isDisposed()) {
-                if (actionId == KeyEvent.KEYCODE_ENTER || actionId == KeyEvent.KEYCODE_ENDCALL
-                        || actionId == EditorInfo.IME_NULL) {
+                if (actionId == KeyEvent.KEYCODE_ENTER
+                        || actionId == EditorInfo.IME_NULL
+                        || actionId == EditorInfo.IME_ACTION_SEARCH
+                        || actionId == EditorInfo.IME_ACTION_DONE
+                        || actionId == EditorInfo.IME_ACTION_SEND
+                ) {
                     observer.onNext(view.getText());
                     return true;
                 }

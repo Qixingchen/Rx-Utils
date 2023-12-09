@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.github.kt3k.coveralls'
-apply plugin: 'jacoco'
+apply plugin: 'maven-publish'
+//apply plugin: 'com.github.dcendents.android-maven'
+//apply plugin: 'com.github.kt3k.coveralls'
+//apply plugin: 'jacoco'
 
 android {
     compileSdkVersion rootProject.ext.sdk_version
@@ -58,38 +59,38 @@ dependencies {
     api "com.jakewharton.rxbinding:rxbinding-design:$rx_binding_version"
     api "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:$rx_binding_version"
 }
-// build a jar with source files
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-    failOnError false
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    classpath += configurations.compile
-}
-
-// build a jar with javadoc
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    from javadoc.destinationDir
-}
-
-[javadoc]*.options*.encoding = 'UTF-8'
-[javadoc]*.options*.charSet = 'UTF-8'
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
-}
-
-coveralls {
-    jacocoReportPath = "${buildDir}/reports/jacoco/debug/jacoco.xml"
-}
-
-tasks.coveralls {
-    dependsOn 'assembleDebugUnitTest'
-    onlyIf { System.env.'CI' }
-}
+//// build a jar with source files
+//task sourcesJar(type: Jar) {
+//    from android.sourceSets.main.java.srcDirs
+//    classifier = 'sources'
+//}
+//
+//task javadoc(type: Javadoc) {
+//    failOnError false
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//    classpath += configurations.compile
+//}
+//
+//// build a jar with javadoc
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//[javadoc]*.options*.encoding = 'UTF-8'
+//[javadoc]*.options*.charSet = 'UTF-8'
+//
+//artifacts {
+//    archives sourcesJar
+//    archives javadocJar
+//}
+//
+//coveralls {
+//    jacocoReportPath = "${buildDir}/reports/jacoco/debug/jacoco.xml"
+//}
+//
+//tasks.coveralls {
+//    dependsOn 'assembleDebugUnitTest'
+//    onlyIf { System.env.'CI' }
+//}
