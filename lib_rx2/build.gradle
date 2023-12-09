@@ -68,7 +68,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.qixingchen'
-                artifactId = 'Rx-Utils/lib_rx2'
+                artifactId = 'Rx-Utils:lib_rx2'
                 version = '2.1'
             }
         }
