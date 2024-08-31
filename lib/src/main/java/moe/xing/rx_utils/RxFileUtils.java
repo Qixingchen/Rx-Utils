@@ -191,7 +191,7 @@ public class RxFileUtils extends FileUtils {
                         e.printStackTrace();
                         subscriber.onError(e);
                     } catch (SecurityException e) {
-                        new RxPermissions(context).request(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        new RxPermissions((android.app.Activity)context).request(Manifest.permission.READ_EXTERNAL_STORAGE)
                                 .subscribe(new Action1<Boolean>() {
                                     @Override
                                     public void call(Boolean aBoolean) {
